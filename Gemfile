@@ -1,11 +1,16 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'bootstrap-sass', '2.0.0'
+gem 'bootswatch-rails'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'pg', '0.12.2'
 
-gem 'pg'
+gem 'annotate', '2.5.0', group: :development
 
 
 # Gems used only for assets and not required
@@ -18,12 +23,18 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-ui-rails'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.0.2'
+gem 'best_in_place'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.1'
+
+# group :production do
+#   gem 'pg', '0.12.2'
+# end
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

@@ -11,5 +11,18 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
+//= require bootstrap
+//= require jquery.purr
+//= require 'best_in_place'
 //= require_tree .
+
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+
+jQuery(function($){
+   $.datepicker.setDefaults({dateFormat: 'yy-mm-dd'});
+});

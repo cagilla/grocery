@@ -1,27 +1,28 @@
 <h1>Listing items</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Unit</th>
-    <th>Num required</th>
-    <th>Num onhand</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @items.each do |item| %>
-  <tr>
-    <td><%= item.name %></td>
-    <td><%= item.unit %></td>
-    <td><%= item.num_required %></td>
-    <td><%= item.num_onhand %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<table  class="table table-striped table-bordered" >
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Unit</th>
+      <th>Num required</th>
+      <th>Num onhand</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= best_in_place item, :name %></td>
+        <td><%= best_in_place item, :unit %></td>
+        <td><%= best_in_place item, :num_required %></td>
+        <td><%= best_in_place item, :num_onhand %></td>
+        <td><%= best_in_place item, :location %></td>
+        <td><%= link_to raw("<i class=\"icon-trash \"> </i>"), item, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />

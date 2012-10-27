@@ -9,7 +9,7 @@
 #  num_onhand   :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  location     :string(255)
+#  location_id  :integer
 #
 
 require 'test_helper'

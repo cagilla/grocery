@@ -9,10 +9,11 @@
 #  num_onhand   :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  location     :string(255)
+#  location_id  :integer
 #
 
 class Item < ActiveRecord::Base
-  attr_accessible :name, :num_onhand, :num_required, :unit, :location
+  attr_accessible :name, :num_onhand, :num_required, :unit, :location_id
+  belongs_to :location
   
 end

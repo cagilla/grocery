@@ -5,8 +5,8 @@
     <tr>
       <th>Name</th>
       <th>Unit</th>
-      <th>Num required</th>
-      <th>Num onhand</th>
+      <th>Items required</th>
+      <th>Items on hand</th>
       <th>Location</th>
       <th></th>
     </tr>
@@ -18,7 +18,7 @@
         <td><%= best_in_place item, :unit %></td>
         <td><%= best_in_place item, :num_required %></td>
         <td><%= best_in_place item, :num_onhand %></td>
-        <td><%= best_in_place item, :location %></td>
+        <td><%= best_in_place item, :location_id, :type => :select, :collection => Location::list_location_options %></td>
         <td><%= link_to raw("<i class=\"icon-trash \"> </i>"), item, confirm: 'Are you sure?', method: :delete %></td>
       </tr>
     <% end %>
@@ -28,3 +28,4 @@
 <br />
 
 <%= link_to 'New Item', new_item_path %>
+<%= link_to 'New Location', new_location_path %>

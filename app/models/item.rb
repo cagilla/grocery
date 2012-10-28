@@ -15,5 +15,7 @@
 class Item < ActiveRecord::Base
   attr_accessible :name, :num_onhand, :num_required, :unit, :location_id
   belongs_to :location
+
+  scope :items_needed, where("num_onhand<num_required")
   
 end

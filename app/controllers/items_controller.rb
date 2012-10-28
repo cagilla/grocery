@@ -2,7 +2,17 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @search = Item.search(params[:q])
+    @items = @search.result(:distinct => true)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @items }
+    end
+  end
+
+  def shopping_list
+    @items = Item.items_needed
 
     respond_to do |format|
       format.html # index.html.erb

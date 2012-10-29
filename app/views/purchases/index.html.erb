@@ -1,0 +1,22 @@
+<h1>Listing purchases</h1>
+
+<table class="table table-striped table-bordered" >
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+    <th>Purchased</th>
+  </tr>
+
+<% @purchases.each do |purchase| %>
+  <tr>
+    <td><%= purchase.item.name %></td>
+    <td><%= best_in_place purchase, :quantity %></td>
+    <td><%= best_in_place purchase, :purchased, type: :checkbox %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Update Inventory', new_purchase_path %><p>
+<%= link_to 'Goto Inventory', items_path %>

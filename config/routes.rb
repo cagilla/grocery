@@ -1,8 +1,12 @@
 Grocery::Application.routes.draw do
+  resources :purchases
+
   resources :locations
 
   resources :items
-resources :users
+  
+  resources :users
+  
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
@@ -11,7 +15,6 @@ resources :users
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
 
-  match '/shopping_list', to: 'items#shopping_list'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

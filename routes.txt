@@ -1,0 +1,32 @@
+    locations GET    /locations(.:format)          locations#index
+              POST   /locations(.:format)          locations#create
+ new_location GET    /locations/new(.:format)      locations#new
+edit_location GET    /locations/:id/edit(.:format) locations#edit
+     location GET    /locations/:id(.:format)      locations#show
+              PUT    /locations/:id(.:format)      locations#update
+              DELETE /locations/:id(.:format)      locations#destroy
+        items GET    /items(.:format)              items#index
+              POST   /items(.:format)              items#create
+     new_item GET    /items/new(.:format)          items#new
+    edit_item GET    /items/:id/edit(.:format)     items#edit
+         item GET    /items/:id(.:format)          items#show
+              PUT    /items/:id(.:format)          items#update
+              DELETE /items/:id(.:format)          items#destroy
+        users GET    /users(.:format)              users#index
+              POST   /users(.:format)              users#create
+     new_user GET    /users/new(.:format)          users#new
+    edit_user GET    /users/:id/edit(.:format)     users#edit
+         user GET    /users/:id(.:format)          users#show
+              PUT    /users/:id(.:format)          users#update
+              DELETE /users/:id(.:format)          users#destroy
+     sessions POST   /sessions(.:format)           sessions#create
+  new_session GET    /sessions/new(.:format)       sessions#new
+      session DELETE /sessions/:id(.:format)       sessions#destroy
+       signup        /signup(.:format)             users#new
+       signin        /signin(.:format)             sessions#new
+      signout DELETE /signout(.:format)            sessions#destroy
+         help        /help(.:format)               static_pages#help
+        about        /about(.:format)              static_pages#about
+      contact        /contact(.:format)            static_pages#contact
+shopping_list        /shopping_list(.:format)      items#shopping_list
+         root        /                             items#index
